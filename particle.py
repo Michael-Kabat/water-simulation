@@ -2,7 +2,7 @@ import pygame
 
 class Particle:
     def __init__(self, pos, radius, color, screen, gravity = False, gravity_strength = 0) -> None:
-        self.pos : pygame.Vector2 = pygame.Vector2(pos[0], pos[1])
+        self.pos : pygame.Vector2 = pos
         self.radius : int = radius
         self.color : str | int  = color
         self.gravity: bool = gravity
@@ -13,8 +13,8 @@ class Particle:
     def draw(self):
         pygame.draw.circle(self.screen, self.color, self.pos, self.radius)
 
-    def update(self, other):
+    def update(self, other, dt):
         if self.gravity:
-            if self.pos.y > self.screen.get_surface().get_height():
-                self.pos[1] -= self.gravity_strength
+            if self.pos.y < self.screen.get_height():
+                self.pos.y += self.gravity_strength * dt
         
