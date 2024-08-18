@@ -24,7 +24,7 @@ class Game:
 
             if len(self.particles) < 10:
                 self.particles.append(Particle(pygame.Vector2(random.randint(0, self.width), random.randint(0, self.height)), 
-                                               25, "red", self.screen, True, 15))
+                                               25, "red", self.screen, 100, True, 10))
 
             for particle in self.particles:
                 particle.draw()
