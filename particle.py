@@ -30,5 +30,9 @@ class Particle:
         
         if self.pos.distance_to(other.pos) < self.vision:
             pass
+            # self.velocity *= -1
+            # other.velocity *= -1
+    
+    
             
         

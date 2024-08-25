@@ -22,9 +22,9 @@ class Game:
                     running = False
             self.screen.fill("black")
 
-            if len(self.particles) < 10:
+            while len(self.particles) < 150:
                 self.particles.append(Particle(pygame.Vector2(random.randint(0, self.width), random.randint(0, self.height)), 
-                                               25, "red", self.screen, 100, True, 10))
+                                               10, "red", self.screen, 250))
 
             for particle in self.particles:
                 particle.draw()
